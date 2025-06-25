@@ -1,0 +1,82 @@
+<!--Student name: Hoang Thien loc Nguyen-->
+<!--Student ID: 041165148-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Bootstrap and JavaScript</title>
+    <meta charset="utf-8">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Unit converter JS code -->
+    <script type="text/javascript">
+        function convertLength() {
+            const choice = prompt("Enter unit to convert to (1: inch or 2: centimeter):");
+            if (!choice || (choice !== "1" && choice !== "2")) {
+                alert("Invalid unit entered.");
+                return;
+            }
+
+            const unit = choice === "1" ? "inches" : "centimeters";
+            const input = prompt(`Enter the length to convert to ${unit}:`);
+            if (input === null) return;
+
+            const value = parseFloat(input);
+            if (isNaN(value)) {
+                alert("Invalid number entered.");
+                return;
+            }
+
+            let result;
+            if (unit === "inches") {
+                result = value / 2.54;
+                alert(`${value} centimeters is ${result.toFixed(2)} inches`);
+            } else {
+                result = value * 2.54;
+                alert(`${value} inches is ${result.toFixed(2)} centimeters`);
+            }
+        }
+
+    </script>
+</head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<body class="bg-light">
+
+    <!-- HEADER -->
+    <header class="bg-dark text-white text-center py-4 mb-3 position-relative">
+        <h2 class="font-weight-bold mb-0">Computer Engineering Technology - Web Programming</h2>
+        <div class="position-absolute" style="bottom: 10px; right: 20px;">
+            <a href="Lab_2/index.html" class="btn btn-primary mx-1 px-3 py-1 text-white font-weight-bold">Lab 2</a>
+            <a href="Lab_3/index.html" class="btn btn-primary mx-1 px-3 py-1 text-white font-weight-bold">Lab 3</a>
+        </div>
+
+    </header>
+
+    <!-- CONTENT -->
+    <main class="container py-4" style="min-height: 400px;">
+        <h3>Length Converter Using Bootstrap Template</h3>
+        <hr>
+        <h4>This program converts from inch to centimeter and vice versa</h4>
+        <hr>
+        <h5>Please click Convert button to perform length conversion</h5>
+        <hr>
+        <input type="button" class="btn btn-lg rounded-pill btn-success font-weight-bold" value="Convert!"
+            onclick="convertLength()">
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-4 mt-5 fixed-bottom">
+        <p class="mb-1">041165148</p>
+        <p class="mb-1">Hoang Thien Loc Nguyen</p>
+        <p class="mb-0">
+            <a href="mailto:nguy1149@algonquinlive.com">nguy1149@algonquinlive.com</a>
+        </p>
+    </footer>
+</body>
